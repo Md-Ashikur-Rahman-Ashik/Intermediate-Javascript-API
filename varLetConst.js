@@ -20,6 +20,23 @@ const student = {
 
 // console.log(student);
 
-function add(num1, num2){
-    
+function add(num1 = 0, num2 = 0){
+    const result = num1 + num2;
+    console.log("First number is", num1);
+    console.log("Second number is", num2);
+    return result;
 }
+
+const sum = add(5, 7);
+// const sum = add(5);
+// console.log("The result is:", sum);
+
+function fullName(firstName, lastName = ""){
+    const full = firstName + " " + lastName;
+    return full;
+}
+
+const first = "Jan";
+const last = "uary"
+const name = first + last;
+console.log(name);
