@@ -64,7 +64,7 @@ const secondUser = {
     }
 }
 
-const numbers = [4, 5, 2, 8, 10];
+// const numbers = [4, 5, 2, 8, 10];
 // const doubled = [];
 
 // for (let num of numbers){
@@ -84,5 +84,25 @@ function doubleIt(num){
 
 const secondDouble = n => (n * 2);
 
-const output = numbers.map(secondDouble);
-console.log(output);
+// const output = numbers.map(secondDouble);
+// console.log(output);
+
+// const secondOutput = numbers.map(n => (n * 2));
+// console.log(secondOutput);
+
+const numbers = [12, 10, 8, 15, 7];
+const doubled = numbers.map(n => (n * 2));
+// console.log(doubled);
+
+const fiveBonus = numbers.map(n => (n + 5));
+// console.log(fiveBonus);
+
+const halves = numbers.map(n => (n / 2));
+// console.log(halves);
+
+const friends = ["Tom", "John", "Micheal", "Oliver"];
+const lengths = friends.map(friend => friend.length);
+// console.log(lengths);
+
+const firstLetter = friends.map(friend => friend[0]);
+console.log(firstLetter);
