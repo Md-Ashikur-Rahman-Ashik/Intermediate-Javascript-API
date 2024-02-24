@@ -62,7 +62,7 @@ const sum = thirdAdd(3, 5);
 
 const math = Math.max(6, 23, 45, 1, 89, 23);
 // const numbers = [2, 3, 5, 45, 5, 43, 90, 32, 15];
-const arrayMax = Math.max(...numbers);
+// const arrayMax = Math.max(...numbers);
 
 // console.log(arrayMax);
 // console.log(arrayMax);
@@ -83,7 +83,32 @@ const actor = {
 
 // console.log(actor.phone);
 
-const numbers = [45, 99];
-const [first, second] = numbers;
+// const numbers = [45, 99];
+// const [first, second] = numbers;
 
 const [x, y] = [12, 66];
+
+const glass = {
+    name: "Glass",
+    color: "Golden",
+    price: 12,
+    isCleaned: true,
+};
+
+// console.log(glass);
+const keys = Object.keys(glass);
+// console.log(keys);
+const values = Object.values(glass);
+// console.log(values);
+
+const pair = Object.entries(glass);
+// console.log(pair);
+// delete glass.isCleaned;
+// console.log(glass);
+
+const {isCleaned, ...shortGlass} = glass;
+// console.log(shortGlass);
+
+Object.freeze(glass);
+glass.source = "Bangladesh";
+console.log(glass);
