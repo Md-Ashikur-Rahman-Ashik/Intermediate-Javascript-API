@@ -41,19 +41,70 @@ const products = [
     },
 ]
 
-const names = products.map(product => product.name);
+// const names = products.map(product => product.name);
 // console.log(names);
 
-const prices = products.map(product => product.price);
+// const prices = products.map(product => product.price);
 // console.log(prices);
 
 // products.forEach(p => console.log(p.id));
 
-const expensive = products.filter(p => p.price > 50000);
+// const expensive = products.filter(p => p.price > 50000);
 // console.log(expensive);
 
-const affordable = products.find(p => p.price < 50000);
+// const affordable = products.find(p => p.price < 50000);
 // console.log(affordable);
 
-const total = products.reduce((accum, current) => (accum + current.price), 0);
-console.log(total);
+// const total = products.reduce((accum, current) => (accum + current.price), 0);
+// console.log(total);
+
+class Product{
+    country = "Bangladesh";
+    constructor(name){
+        this.name = name;
+    }
+    speak(talk){
+        // console.log(`Talking about ${talk}`);
+    }
+}
+
+const walton = new Product("Walton");
+// console.log(walton);
+// walton.speak("What are you talking about?");
+
+class Teacher{
+    constructor(name, subject){
+        this.name = name;
+        this.subject = subject;
+    }
+    lecture(){
+        console.log("Sir is teaching Math.");
+    }
+}
+
+const teacher = new Teacher("Tapon Sir", "Physics");
+// console.log(teacher);
+
+const rashid = new Teacher("Rashid Sir", "English");
+// console.log(rashid);
+
+class Vehicle{
+    constructor(name, price){
+        this.name = name;
+        this.price = price;
+    }
+    move(){
+        console.log("Car is not moving");
+    }
+}
+
+const vehicle = new Vehicle("Land Cruiser", 15000000);
+// console.log(vehicle);
+
+class Bus extends Vehicle{
+    constructor(name, price, seat, ticketPrice){
+        super(name, price);
+        this.seat = seat;
+        
+    }
+}
