@@ -1,7 +1,7 @@
-const a = 5;
+// const a = 5;
 // console.log(typeof a);
 
-const b = "Learning Web Development";
+// const b = "Learning Web Development";
 // console.log(typeof b);
 
 const ages = [45, 65, 48];
@@ -13,39 +13,39 @@ const student = {
 };
 // console.log(typeof student);
 
-const d = true;
+// const d = true;
 // console.log(typeof d);
 
-let x = 5;
-let y = x;
+// let x = 5;
+// let y = x;
 
 // console.log(x, y);
 
-y = 7;
+// y = 7;
 
 // console.log(x, y);
 
-let p = {
-    job: "Web Developer"
-};
-let q = p;
+// let p = {
+    // job: "Web Developer"
+// };
+// let q = p;
 
 // q = {
 //     job: "Backend web developer"
 // }
 
-q.job = "Front End Web Developer";
+// q.job = "Front End Web Developer";
 
 // console.log(p, q);
 
-let first;
+// let first;
 // console.log(first);
 
 function second(a, b){
     const total = a + b;
 }
 
-const result = second();
+// const result = second();
 // console.log(result);
 
 function third(a, b, c, d){
@@ -62,7 +62,7 @@ function noNegative(a, b){
     return a + b;
 }
 
-const total = noNegative(2, 5);
+// const total = noNegative(2, 5);
 // console.log(total);
 
 const fifth = {
@@ -89,4 +89,22 @@ const data = {
 }
 
 // console.log(typeof undefined);
-console.log(typeof null);
+// console.log(typeof null);
+
+const x = false;
+// if(x){
+//     console.log("Value of x is truthy");
+// }
+// else{
+//     console.log("Value of x is falsy");
+// }
+
+const y = "";
+// if(!y){
+//     console.log("Value is falsy");
+// }
+
+const z = " ";
+if(!!z){
+    console.log("Value is truthy");
+}
