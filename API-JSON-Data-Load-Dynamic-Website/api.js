@@ -75,12 +75,24 @@ function loadUsersTwo(){
     .then(data => displayUsersTwo(data))
 }
 
+// function displayUsersTwo(data){
+//     // console.log(data);
+//     for(const user of data){
+//         // console.log(user);
+//         // console.log(user.name);
+//         // console.log(user);
+//         // console.log(user.email);
+//         console.log(user.username);
+//     }
+// }
+
 function displayUsersTwo(data){
-    // console.log(data);
+    const ul = document.getElementById("usersList");
     for(const user of data){
-        // console.log(user);
         // console.log(user.name);
-        // console.log(user);
-        console.log(user.email);
+        const li = document.createElement("li");
+        li.innerText = user.name;
+        // li.innerText = "user";
+        ul.appendChild(li);
     }
 }
