@@ -14,17 +14,17 @@
   </head>
   <body>
     <header>
-      <h2 class="text-6xl">Hunting Phone</h2>
+      <h2 class="text-6xl text-center">Hunting Phone</h2>
     </header>
     <main class="container mx-auto mt-8">
-      <section class="bg-gray-100 p-4 m-4">
+      <section class="bg-black p-4 m-4 flex gap-2 justify-center">
         <input
           id="searchField"
           type="text"
           placeholder="Search"
-          class="input input-bordered w-full max-w-xs"
+          class="input input-bordered w-1/2 max-w-xs"
         />
-        <button onclick="handleSearch()" class="btn btn-accent">Search</button>
+        <button onclick="handleSearch()" class="btn w-28 btn-accent">Search</button>
 
         <!-- Second Search field -->
         <!-- <input
@@ -56,11 +56,13 @@
 
       <!-- Show Details Modal -->
       <!-- Open the modal using ID.showModal() method -->
-      <button class="btn" onclick="showDetailsModal.showModal()">open modal</button>
+      <!-- <button class="btn" onclick="showDetailsModal.showModal()">open modal</button> -->
       <dialog id="showDetailsModal" class="modal modal-bottom sm:modal-middle">
         <div class="modal-box">
-          <h3 class="font-bold text-lg">Hello!</h3>
-          <p class="py-4">Press ESC key or click the button below to close</p>
+          <h3 id="phoneName" class="font-bold text-3xl">Hello!</h3>
+          <div id="showDetailContainer">
+
+          </div>
           <div class="modal-action">
             <form method="dialog">
               <!-- if there is a button in form, it will close the modal -->

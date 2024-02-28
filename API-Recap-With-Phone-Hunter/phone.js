@@ -26,10 +26,10 @@ const displayPhones = (phones, isShowAll) => {
     allContainer.classList.add("hidden");
   }
 
-//   console.log("Is Show All?", isShowAll);s
+  //   console.log("Is Show All?", isShowAll);s
 
   //   Display first 12 phones
-  if(!isShowAll){
+  if (!isShowAll) {
     phones = phones.slice(0, 12);
     // allContainer.classList.add("hidden");
   }
@@ -48,7 +48,7 @@ const displayPhones = (phones, isShowAll) => {
       </figure>
       <div class="card-body">
         <h2 class="card-title">${phone.phone_name}</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <p>What matters to you matters to Apple, too. From privacy protections that give you more control over your data. To using more recycled materials that minimize environmental impact. To creating built‑in features that make iPhone accessible to all.</p>
         <div class="card-actions justify-center">
           <button onclick="handleShowDetail('${phone.slug}')" class="btn btn-primary">Show Details</button>
         </div>
@@ -86,8 +86,7 @@ const toggleLoadingSpinner = (isLoading) => {
   const spinnerLoading = document.getElementById("loadingSpinner");
   if (isLoading) {
     spinnerLoading.classList.remove("hidden");
-  }
-  else{
+  } else {
     spinnerLoading.classList.add("hidden");
   }
 };
@@ -95,19 +94,42 @@ const toggleLoadingSpinner = (isLoading) => {
 // Handle show all
 // let count = 0;
 const handleShowAll = () => {
-    handleSearch(true);
-    // const allContainer = document.getElementById("showAllContainer");
-    // allContainer.classList.add("hidden");
-    // count++;
-    // if(count >= 1){
-    //     allContainer.classList.add("hidden");
-    // }
-}
+  handleSearch(true);
+  // const allContainer = document.getElementById("showAllContainer");
+  // allContainer.classList.add("hidden");
+  // count++;
+  // if(count >= 1){
+  //     allContainer.classList.add("hidden");
+  // }
+};
 
-const handleShowDetail = async(id) => {
-    // console.log("Clicked", id);
-    // Load single phone data
-    const res = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
-    const data = await res.json();
-    console.log(data);
-}
+const handleShowDetail = async (id) => {
+  // console.log("Clicked", id);
+  // Load single phone data
+  const res = await fetch(
+    `https://openapi.programming-hero.com/api/phone/${id}`
+  );
+  const data = await res.json();
+  // console.log(data);
+  const phone = data.data;
+
+  showPhoneDetails(phone);
+};
+
+const showPhoneDetails = (phone) => {
+  // console.log(phone);
+
+  const nameOfPhone = document.getElementById("phoneName");
+  nameOfPhone.innerText = phone.name;
+
+  const containerShowDetail = document.getElementById("showDetailContainer");
+  containerShowDetail.innerHTML = `
+    <img src="${phone.image}">
+    <p><span>Storage: </span>${phone.mainFeatures.storage}</p>
+    <p><span>Display Size: </span>${phone.mainFeatures.displaySize}</p>
+    <p><span>GPS: </span>${phone.others.GPS}</p>
+  `
+
+  // Show the modal
+  showDetailsModal.showModal();
+};
