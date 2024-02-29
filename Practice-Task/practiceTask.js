@@ -22,16 +22,24 @@
 
 // delayGreeting("Alice", 2000);
 
-function tellJoke() {
-  console.log(
-    "Why don't scientists trust atoms? Because they make up everything!"
-  );
-}
+// function tellJoke() {
+//   console.log(
+//     "Why don't scientists trust atoms? Because they make up everything!"
+//   );
+// }
 
-const jokeInterval = setInterval(tellJoke, 2000);
-setTimeout(() => {
-    clearInterval(jokeInterval);
-}, 10000);
+// const jokeInterval = setInterval(tellJoke, 2000);
+// setTimeout(() => {
+//     clearInterval(jokeInterval);
+// }, 10000);
 
 
 // tellJoke();
+
+const data = async() => {
+  const apiData = await fetch("https://v2.jokeapi.dev/joke/Programming?type=single");
+  const res = await apiData.json();
+  console.log(res.joke);
+}
+
+data();
